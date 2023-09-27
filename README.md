@@ -1,7 +1,6 @@
 # Module-15-Challenge-Leaflet
 
-
-hikmetyigit34.github.io
+https://HikmetYigit34.github.io/Module-15-Challenge-Leaflet
 
 <ul>
 <li>
