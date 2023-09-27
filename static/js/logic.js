@@ -43,12 +43,12 @@ function styleInfo(feature) {
 
 //define a function to choose the fillColor of the earthquake based on earthquake depth
 function chooseColor(depth) {
-    if (depth <= 10) return "red";
-    else if (depth > 10 & depth <= 25) return "orange";
+    if (depth <= 10) return "lightgreen";
+    else if (depth > 10 & depth <= 25) return "green";
     else if (depth > 25 & depth <= 40) return "yellow";
-    else if (depth > 40 & depth <= 55) return "pink";
-    else if (depth > 55 & depth <= 70) return "blue";
-    else return "green";
+    else if (depth > 40 & depth <= 55) return "orange";
+    else if (depth > 55 & depth <= 70) return "darkorange";
+    else return "red";
 };
 
 //define a function to determine the radius of each earthquake marker
@@ -94,13 +94,13 @@ d3.json(url).then(function (data) { //pull the earthquake JSON data with d3
 var legend = L.control({ position: "bottomright" });
 legend.onAdd = function(myMap) {
     var div = L.DomUtil.create("div", "legend");
-       div.innerHTML += "<h4>Depth Color Legend</h4>";
-       div.innerHTML += '<i style="background: red"></i><span>(Depth < 10)</span><br>';
-       div.innerHTML += '<i style="background: orange"></i><span>(10 < Depth <= 25)</span><br>';
-       div.innerHTML += '<i style="background: yellow"></i><span>(25 < Depth <= 40)</span><br>';
-       div.innerHTML += '<i style="background: pink"></i><span>(40 < Depth <= 55)</span><br>';
-       div.innerHTML += '<i style="background: blue"></i><span>(55 < Depth <= 70)</span><br>';
-       div.innerHTML += '<i style="background: green"></i><span>(Depth > 70)</span><br>';
+       div.innerHTML += "<h4>Legend <hr>Color - Depth  </h4>";
+       div.innerHTML += '<i style="background: lightgreen;"></i><span>(Depth < 10)</span><br>';
+       div.innerHTML += '<i style="background: green;     "></i><span>(10 < Depth <= 25)</span><br>';
+       div.innerHTML += '<i style="background: yellow;    "></i><span>(25 < Depth <= 40)</span><br>';
+       div.innerHTML += '<i style="background: orange;    "></i><span>(40 < Depth <= 55)</span><br>';
+       div.innerHTML += '<i style="background: darkorange;"></i><span>(55 < Depth <= 70)</span><br>';
+       div.innerHTML += '<i style="background: red;       "></i><span>(Depth > 70)</span><br>';
   
     return div;
   };
